@@ -25,4 +25,8 @@ yarn build
 
 ## 登录
 
-管理员账号 账号：de mo 邮箱：demo@qq.com 密码：Aa123456
+默认入口地址
+    http://localhost:1337/admin/
+
+管理员账号
+     账号：de mo 邮箱：demo@qq.com 密码：Aa123456
