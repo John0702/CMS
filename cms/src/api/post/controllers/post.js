@@ -16,17 +16,17 @@ module.exports = createCoreController("api::post.post", ({ strapi }) => ({
             // populate: "deep",
             populate: "*",
         };
-        const { pageNo, pageSize, ...params } = ctx.query;
-        if (pageNo && pageSize) {
-          ctx.query = {
-            ...params,
-            "pagination[page]": Number(pageNo),
-            "pagination[pageSize]": Number(pageSize),
-          };
-        }
+        // const { pageNo, pageSize, ...params } = ctx.query;
+        // if (pageNo && pageSize) {
+        //   ctx.query = {
+        //     ...params,
+        //     "pagination[page]": Number(pageNo),
+        //     "pagination[pageSize]": Number(pageSize),
+        //   };
+        // }
         const res = await super.find(ctx);
         res.data = res.data.map(item=>removeAttrs(item))
-        return res;
+        return res.data;
     },
     
     async findOne(ctx) {
