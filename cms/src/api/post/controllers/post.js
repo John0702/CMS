@@ -30,6 +30,11 @@ module.exports = createCoreController("api::post.post", ({ strapi }) => ({
     },
     
     async findOne(ctx) {
+        ctx.query = {
+            ...ctx.query,
+            // populate: "deep",
+            populate: "*",
+        };
         const { data } = await super.findOne(ctx);
         return removeAttrs(data);
     },

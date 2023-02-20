@@ -2,16 +2,16 @@
 const { removeAttrs } = require("../../../utils/index.js");
 
 /**
- * author controller
+ * banner controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::author.author', ({ strapi }) => ({
+module.exports = createCoreController('api::banner.banner', ({ strapi }) => ({
     async find(ctx) {
         const res = await super.find(ctx);
         res.data = res.data.map(item=>removeAttrs(item))
-        return res.data;
+        return res.data[0];
     },
     async findOne(ctx) {
         ctx.query = {
@@ -20,6 +20,7 @@ module.exports = createCoreController('api::author.author', ({ strapi }) => ({
             populate: "*",
         };
         const { data } = await super.findOne(ctx);
+        delete data.id
         return removeAttrs(data);
     },
 }));

@@ -38,10 +38,14 @@ yarn build
     首页分类：http://localhost:1337/api/categories 
     http://localhost:1337/api/categories?id id为对应的分类id 可以获取对应的文章list 
 
-    作者列表：http://localhost:1337/api/authors
+    作者列表：http://localhost:1337/api/authors 
+    http://localhost:1337/api/authors?id id为对应的作者id 可以获取对应作者的详细包括文章
+    例：http://localhost:1337/api/authors/3
     
     文章列表：http://localhost:1337/api/posts //若首页未选择分类 可以调用此接口获取数据 
     
     文章详情：http://localhost:1337/api/posts/id id为对应的文章id
+
+    小册广告位：http://localhost:1337/api/banners 
 
 ## TODO 由于某些问题 我们就做一个简单的哈 
