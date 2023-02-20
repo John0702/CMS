@@ -17,8 +17,8 @@ module.exports = createCoreController('api::category.category', ({ strapi }) => 
     async findOne(ctx) {
         ctx.query = {
             ...ctx.query,
-            // populate: "deep",
-            populate: "*",
+            populate: "deep",
+            // populate: "*",
         };
         const { data } = await super.findOne(ctx);
         return removeAttrs(data);
